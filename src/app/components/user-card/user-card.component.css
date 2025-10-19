@@ -1,0 +1,86 @@
+.user-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e1e5e9;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.user-avatar {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.avatar-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.user-info {
+  flex: 1;
+  text-align: center;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 8px 0;
+}
+
+.user-email {
+  color: #718096;
+  font-size: 0.9rem;
+  margin: 0 0 6px 0;
+}
+
+.user-company {
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0 6px 0;
+}
+
+.user-city {
+  color: #718096;
+  font-size: 0.9rem;
+  margin: 0 0 16px 0;
+}
+
+.card-actions {
+  text-align: center;
+}
+
+.details-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.details-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}

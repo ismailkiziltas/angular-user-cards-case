@@ -1,0 +1,89 @@
+<div class="user-detail-container">
+  <div class="header">
+    <button (click)="goBack()" class="back-btn">
+      ← Kullanıcı Listesine Dön
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Kullanıcı bilgileri yükleniyor...</p>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+    <button (click)="loadUser(userId)" class="retry-btn">Tekrar Dene</button>
+  </div>
+
+  <div *ngIf="!loading && !error && user" class="user-detail-card">
+    <div class="user-header">
+      <div class="user-avatar">
+        {{ user.name.charAt(0).toUpperCase() }}
+      </div>
+      <div class="user-title">
+        <h1>{{ user.name }}</h1>
+        <p class="username">{{ '@' + user.username }}</p>
+      </div>
+    </div>
+
+    <div class="user-details">
+      <div class="detail-section">
+        <h2>Kişisel Bilgiler</h2>
+        <div class="detail-grid">
+          <div class="detail-item">
+            <span class="label">İsim:</span>
+            <span class="value">{{ user.name }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Kullanıcı Adı:</span>
+            <span class="value">{{ user.username }}</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">E-posta:</span>
+            <span class="value">
+              <a [href]="'mailto:' + user.email">{{ user.email }}</a>
+            </span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Telefon:</span>
+            <span class="value">
+              <a [href]="'tel:' + user.phone">{{ user.phone }}</a>
+            </span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Website:</span>
+            <span class="value">
+              <a [href]="'http://' + user.website" target="_blank">{{ user.website }}</a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2>Adres Bilgileri</h2>
+        <div class="address-card">
+          <div class="address-line">
+            <strong>{{ user.address.street }}, {{ user.address.suite }}</strong>
+          </div>
+          <div class="address-line">
+            {{ user.address.city }} - {{ user.address.zipcode }}
+          </div>
+          <div class="coordinates">
+            <small>
+              Koordinatlar: {{ user.address.geo.lat }}, {{ user.address.geo.lng }}
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h2>Şirket Bilgileri</h2>
+        <div class="company-card">
+          <h3>{{ user.company.name }}</h3>
+          <p class="company-slogan">"{{ user.company.catchPhrase }}"</p>
+          <p class="company-business">{{ user.company.bs }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="user-list-container">
+  <h1>Kullanıcı Listesi</h1>
+
+  <div *ngIf="!loading && !error">
+    <app-search-box 
+      [searchTerm]="searchTerm"
+      [placeholder]="'İsim, kullanıcı adı veya email ile ara...'"
+      (searchChange)="onSearchChange($event)"
+      (clearSearch)="onClearSearch()">
+    </app-search-box>
+    
+    <div class="search-results">
+      <span *ngIf="searchTerm">{{ filteredUsers.length }} kullanıcı bulundu</span>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Kullanıcılar yükleniyor...</p>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <p>{{ error }}</p>
+    <button (click)="loadUsers()" class="retry-btn">Tekrar Dene</button>
+  </div>
+
+  <div *ngIf="!loading && !error && searchTerm && filteredUsers.length === 0" class="no-results">
+    <div class="no-results-icon">🔍</div>
+    <h3>Aradığınız kriterlere uygun kullanıcı bulunamadı</h3>
+    <p>"{{ searchTerm }}" için sonuç yok</p>
+    <button (click)="onClearSearch()" class="clear-search-btn">Aramayı Temizle</button>
+  </div>
+
+  <div *ngIf="!loading && !error && filteredUsers.length > 0" class="users-grid">
+    <app-user-card 
+      *ngFor="let user of filteredUsers" 
+      [user]="user">
+    </app-user-card>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+.user-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+.search-results {
+  text-align: center;
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+}
+
+.no-results-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.no-results h3 {
+  color: #495057;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.no-results p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.clear-search-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.clear-search-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #1ea080 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4);
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  color: #721c24;
+  margin-bottom: 20px;
+}
+
+.retry-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.retry-btn:hover {
+  background-color: #c82333;
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .user-list-container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .users-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-list-container {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}

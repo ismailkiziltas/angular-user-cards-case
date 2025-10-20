@@ -25,7 +25,6 @@
   </div>
 
   <div *ngIf="!loading && !error && searchTerm && filteredUsers.length === 0" class="no-results">
-    <div class="no-results-icon">🔍</div>
     <h3>Aradığınız kriterlere uygun kullanıcı bulunamadı</h3>
     <p>"{{ searchTerm }}" için sonuç yok</p>
     <button (click)="onClearSearch()" class="clear-search-btn">Aramayı Temizle</button>
